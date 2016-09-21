@@ -31,14 +31,19 @@ func (slice results) Swap(i, j int) {
 
 func main() {
 	bucket := ""
+	region := ""
 	if len(os.Args) < 2 {
-		fmt.Println("Usage: s3ls {bucketname}\nError: Missing Bucket Name")
+		fmt.Println("Usage: s3ls {bucketname} {region}\nError: Missing Bucket Name")
 		os.Exit(1)
 	} else {
 		bucket = os.Args[1]
 	}
-
-	svc := s3.New(session.New(&aws.Config{Region: aws.String("us-east-1")}))
+	if len(os.Args) == 3 {
+		region = os.Args[2]
+	} else {
+		region = "us-east-1"
+	}
+	svc := s3.New(session.New(&aws.Config{Region: aws.String(region)}))
 	params := &s3.ListObjectsInput{
 		Bucket: aws.String(bucket), // Required
 	}
