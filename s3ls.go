@@ -74,9 +74,14 @@ func main() {
 			//fmt.Println(*resp.Contents[e].Size, *resp.Contents[e].Key)
 		}
 	}
-	sort.Sort(list)
-	for e := 0; e < len(list); e++ {
-		fmt.Println(list[e].Size, list[e].Name)
-	}
-	fmt.Printf("Bucket has %d items\n", len(list))
+  sort.Sort(list)
+  var totalsize int64
+  for e:= range list {
+    totalsize = totalsize + list[e].Size
+    //fmt.Println(list[e].Size,list[e].Name)
+    fmt.Printf("%-15d%s\n", list[e].Size,list[e].Name)
+  }
+  fmt.Printf("Bucket has %d items.\n", len(list))
+  fmt.Printf("%.2f Megabytes total space used.\n", float64(totalsize)/1000000)
 }
+
