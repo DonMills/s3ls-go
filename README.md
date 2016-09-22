@@ -26,7 +26,7 @@ Bucket has 12 items.
 
 ```
 
-The region defaults to us-east-1 if unset.
+**The region defaults to us-east-1 if unset.**
 
 You can set your AWS credentials through all the standard methods, i.e. environment variables or a credential file.
 
