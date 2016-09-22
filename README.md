@@ -1,10 +1,12 @@
-This utility will fetch all the file names and sizes from a s3 bucket in a specified region.
+# S3LS
 
-USAGE:
+This utility will fetch all the file names and sizes from a s3 bucket in a specified region.
+___
+## Usage:
 ```
 s3ls bucketname [region]
 ```
-EXAMPLE:
+## Example:
 ```
 ./s3ls ourbucket us-west-2
 1692           testa.pem
@@ -28,6 +30,16 @@ The region defaults to us-east-1 if unset.
 
 You can set your AWS credentials through all the standard methods, i.e. environment variables or a credential file.
 
+___
+## How to build:
+This tool requires the "aws-sdk-go" be installed.
+```
+go get github.com/aws/aws-sdk-go/
+```
+after this, you can build the tool.
+```
+go build s3ls.go
+```
 Glide installation:  If you don't have all the dependencies installed, you can use [glide](https://github.com/Masterminds/glide) to install them in a vendored location.
 ```
 glide up
