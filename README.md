@@ -1,3 +1,4 @@
+[![Go Report Card](https://goreportcard.com/badge/github.com/donmills/s3ls-go)](https://goreportcard.com/report/github.com/donmills/s3ls-go)
 # S3LS
 
 This utility will fetch all the file names and sizes from a s3 bucket in a specified region.
